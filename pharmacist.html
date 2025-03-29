@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="192x192" href="im/android-icon-192x192.png">
+    <title>User Personas : Pharmacist</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Prompt', sans-serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px 20px;
+            background-image: linear-gradient(rgba(161, 159, 159, 0.7), rgba(51, 46, 36, 0.8)), url('im/pexels-gdtography-277628-911738.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+            /* Header section */
+        .header {
+            width: 70%;
+            max-width: 1800px;
+            margin: 0 auto;
+            margin-top: 10px; /* ใช้ค่าเดียว ไม่ต้องซ้ำ */
+            margin-bottom: 20px; /* ลดลงจาก 60px เป็น 20px */
+            padding: 0 20px;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+            margin-left: -200px;
+        }
+
+        .executive-board {
+            color: #3f2e08;
+            font-size: 20px;
+            margin-bottom: 1px;
+            font-weight: 500;
+            margin-left: -200px;
+        }
+
+        /* Personas grid */
+        .personas-container {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 50px;
+            margin-top: -30px; /* ขยับขึ้น */
+        }
+
+        .personas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px; /* ลดช่องว่างลง ถ้าต้องการ */
+        }
+
+        .personas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .second-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: -10px;
+        }
+        
+        .persona-card {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .persona-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-container {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        
+        /* Persona details */
+        .persona-details {
+            padding: 30px;
+        }
+        
+        .persona-name {
+            font-size: 28px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 10px;
+        }
+        
+        .persona-position {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .persona-contact {
+            font-size: 16px;
+            color: #777;
+        }
+        
+        .persona-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .persona-contact p:before {
+            content: "•";
+            margin-right: 8px;
+            color: #D35400;
+        }
+        
+        /* Second row styling */
+        .second-row .persona-card {
+            width: 35%;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .personas-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            
+            .second-row {
+                gap: 30px;
+            }
+            
+            .second-row .persona-card {
+                width: 45%;
+            }
+            
+            .title {
+                font-size: 70px;
+            }
+            
+            .executive-board {
+                font-size: 22px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .personas-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .second-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .second-row .persona-card {
+                width: 100%;
+                max-width: 600px;
+            }
+            
+            .title {
+                font-size: 60px;
+            }
+            
+            .executive-board {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .personas-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .title {
+                font-size: 48px;
+            }
+            
+            .executive-board {
+                font-size: 18px;
+            }
+            
+            .image-container {
+                height: 250px;
+            }
+            
+            .persona-name {
+                font-size: 24px;
+            }
+            
+            .persona-position {
+                font-size: 16px;
+            }
+            
+            .persona-contact {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="executive-board">Pharmacist</p>
+        <h1 class="title">User Personas</h1>
+    </div>
+    
+    <div class="personas-container">
+        <!-- First row with 3 personas -->
+        <div class="personas-grid">
+            <!-- First persona -->
+            <div class="persona-card">
+                <div class="image-container">
+                    <img src="im/amazonpharmacist-inline-1.jpg" alt="นพ.สมชาย ใจดี">
+                </div>
+                <div class="persona-details">
+                    <h2 class="persona-name">ภก. กิตติพงศ์ เจริญวงศ์</h2>
+                    <div class="persona-contact">
+                        <p>โทรศัพท์: 081-234-5678</p>
+                        <p>อีเมล: kittipong.c@pharmmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second persona -->
+            <div class="persona-card">
+                <div class="image-container">
+                    <img src="im/istockphoto-1550720063-612x612.jpg" alt="นพ.วิชัย สุขสันต์">
+                </div>
+                <div class="persona-details">
+                    <h2 class="persona-name">ภญ. สุนันทา วิทยาศัย</h2>
+                    <div class="persona-contact">
+                        <p>โทรศัพท์: 089-876-5432</p>
+                        <p>อีเมล: sunanta.w@pharmmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third persona -->
+            <div class="persona-card">
+                <div class="image-container">
+                    <img src="im/Walk-in-pharmacy-service-could-save-40-million-more-GP-appointments-says-negotiating-committee-570x380.jpg" alt="นายประสิทธิ์ มั่นคง">
+                </div>
+                <div class="persona-details">
+                    <h2 class="persona-name">ภก. ธนพล สมุทรสาร</h2>
+                    <div class="persona-contact">
+                        <p>โทรศัพท์: 062-345-6789</p>
+                        <p>อีเมล: thanapon.s@pharmmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second row with 2 personas centered -->
+        <div class="second-row">
+            <!-- Fourth persona -->
+            <div class="persona-card">
+                <div class="image-container">
+                    <img src="im/40cbbea7-f845-4f79-8dfc-c2d33e7128fb.png" alt="นางสาวมัลลิกา วัฒนกิจ">
+                </div>
+                <div class="persona-details">
+                    <h2 class="persona-name">ภญ. วิภาวี อนันต์วัฒนา</h2>
+                    <div class="persona-contact">
+                        <p>โทรศัพท์: 095-678-9012</p>
+                        <p>อีเมล: wipawee.a@pharmmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fifth persona -->
+            <div class="persona-card">
+                <div class="image-container">
+                    <img src="im/NTI5NzE_G0d33POkoYQsczTb-3131-NOC.jpg" alt="นายอรรถพล เทพารักษ์">
+                </div>
+                <div class="persona-details">
+                    <h2 class="persona-name">ภก. วิชัย คุณานุวัฒน์</h2>
+                    <div class="persona-contact">
+                        <p>โทรศัพท์: 086-789-0123</p>
+                        <p>อีเมล: wichai.k@pharmmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
